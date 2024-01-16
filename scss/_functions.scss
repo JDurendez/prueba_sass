@@ -1,0 +1,10 @@
+@use 'sass:color';
+
+@function color-texto($background-color) {
+    $brillo: color.lightness($background-color);
+    @if($brillo >= 50%) {
+        @return black;
+    } @else {
+        @return white;
+    }
+}

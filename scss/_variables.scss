@@ -1,0 +1,33 @@
+@use 'sass:color';
+
+$primary: lightgrey;
+$secondary: black;
+$succes: green;
+$warning: yellow;
+$error: red;
+$info: blue;
+
+$colors: (
+    "primary" : $primary,
+    "secondary" : $secondary,
+    "succes" : $succes,
+    "warning" : $warning,
+    "error" : $error,
+    "info" : $info,
+);
+
+$primary-light: color.scale($primary, $lightness: 50%);
+$primary-dark: color.scale($primary, $lightness: -50%);
+    
+$secondary-light: color.scale($secondary, $lightness: 50%);
+$secondary-dark: color.scale($secondary, $lightness: -50%);
+
+$margin: 1rem;
+$padding: 1rem;
+
+$border-thickness: 3px;
+$border-radius: 25px;
+
+$font-size: 1rem;
+$font-size-small: $font-size * 0.8;
+$font-size-large: $font-size * 1.2;

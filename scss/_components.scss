@@ -1,0 +1,71 @@
+@use 'sass:color';
+
+.success {
+    padding: $padding;
+    background-color: $primary;
+    color: $succes;
+    @include border($succes);
+}
+
+.error {
+    padding: $padding;
+    background-color: $primary;
+    color: $error;
+    @include border($error);
+    font-size: $font-size-large;
+}
+
+.info {
+    padding: $padding;
+    background-color: $primary;
+    color: $info;
+    @include border($info);
+    font-size: $font-size-small;
+}
+
+.warning {
+    padding: $padding;
+    background-color: $primary;
+    color: $warning;
+    @include border($warning);
+}
+
+.card {
+    padding: $padding;
+    margin: $margin;
+    @include border($secondary-dark);
+    background-color: $primary-dark;
+    &:hover{
+        background-color: $primary-light;
+    }
+    
+    .card-title {
+        margin-bottom: $margin;
+        font-weight: bold;
+    }
+
+    .card-body {
+        a{
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.btn {
+    @include boton-base;
+}
+
+@each $color, $value in $colors {
+    .btn-#{$color} {
+        @include boton-base($value);
+    }
+
+    .btn-#{$color}-outlined {
+        @include boton-base($value);
+        @include btn-border-ol($value);
+    }
+}
